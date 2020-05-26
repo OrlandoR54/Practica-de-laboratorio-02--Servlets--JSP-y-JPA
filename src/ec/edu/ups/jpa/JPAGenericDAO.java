@@ -5,11 +5,16 @@ package ec.edu.ups.jpa;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import javax.persistence.Query;
+
 import ec.edu.ups.dao.GenericDAO;
+import ec.edu.ups.entidad.Telefono;
+import ec.edu.ups.entidad.Usuario;
 
 /**
  * @author Orlando Real
@@ -83,9 +88,63 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID>{
 	@Override
 	public List<T> find() {
 		// TODO Auto-generated method stub
-		List<T>lista= new ArrayList<T>();
+		em.getTransaction().begin();
+		List<T> lista = null;
+		try {
+			javax.persistence.criteria.CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
+			cq.select(cq.from(persistentClass));
+			lista = em.createQuery(cq).getResultList();
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return lista;
+	}
+
+
+	@Override
+	public Usuario findUser(String correo, String pass) {
+		// TODO Auto-generated method stub
 		
+		Query nativeQuery = em.createNativeQuery("SELECT * FROM Usuario where correo = ? AND password= ?", Usuario.class);
+		nativeQuery.setParameter(1, correo);
+		nativeQuery.setParameter(2, pass);
+
+		return (Usuario) nativeQuery.getSingleResult();
+	}
+
+
+	@Override
+	public List<Usuario> findByIdOrMail(String context) {
+		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Telefono> findByCorreo(String correo) {
+		Query nativeQuery = em.createNativeQuery(
+				"SELECT * FROM usuario, telefono WHERE telefono.USUARIO_CEDULA = usuario.CEDULA and usuario.CORREO = ?", Telefono.class);
+		nativeQuery.setParameter(1, correo);
+
+		return (List<Telefono>) nativeQuery.getResultList();
+	}
+
+
+	@Override
+	public Set<Telefono> findByUserId(String cedula) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Telefono findbyTelefonoId(int tel_codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 }
