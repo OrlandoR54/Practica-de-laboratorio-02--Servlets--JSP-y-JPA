@@ -40,7 +40,7 @@
 		</ul>
 		<ul form-inline my-2 my-lg-0>
 			<li class="nav-item">
-				<a class="navbar-brand" href="/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/CerrarSesion"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
+				<a class="navbar-brand" href="/Practica-de-laboratorio-02--Servlets--JSP-y-JPA/CerrarSesion"><i class="fas fa-sign-out-alt"></i>Cerrar Sesion</a>
 			</li>
 		</ul>
 	</nav>
