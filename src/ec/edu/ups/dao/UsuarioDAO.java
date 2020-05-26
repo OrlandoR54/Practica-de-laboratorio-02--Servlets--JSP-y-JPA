@@ -20,8 +20,8 @@ import ec.edu.ups.entidad.Usuario;
  *
  */
 public interface UsuarioDAO extends GenericDAO<Usuario, String> {
-
-	/*public abstract Usuario findUser(String correo, String pass);
+/*
+	public abstract Usuario findUser(String correo, String pass);
 
 	public List<Usuario> findByIdOrMail(String context);
 
