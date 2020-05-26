@@ -23,5 +23,12 @@ public interface TelefonoDAO extends GenericDAO<Telefono, String>{
 	public abstract Set<Telefono> findByUserId(String cedula);
 	
 	public abstract Telefono findbyTelefonoId(int tel_codigo);
+	
+	List<Telefono> buscarCedula(String cedula);
+
+	public List<Telefono> buscarCedInv(String cedula);
+	
 	*/
+	
+	
 }
