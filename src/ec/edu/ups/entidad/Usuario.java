@@ -1,7 +1,9 @@
 package ec.edu.ups.entidad;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+//import java.util.Set;
 
 import javax.persistence.*;
 
@@ -25,7 +27,7 @@ public class Usuario implements Serializable {
 	private String correo;
 	private String password;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-	private Set<Telefono> telefonos;
+	private List<Telefono> telefonos = new ArrayList<Telefono>();
 
 	public Usuario() {
 		
@@ -84,11 +86,11 @@ public class Usuario implements Serializable {
 		this.password = password;
 	}
 
-	public Set<Telefono> getTelefonos() {
+	public List<Telefono> getTelefonos() {
 		return telefonos;
 	}
 
-	public void setTelefonos(Set<Telefono> telefonos) {
+	public void setTelefonos(List<Telefono> telefonos) {
 		this.telefonos = telefonos;
 	}
 
