@@ -118,7 +118,7 @@
 
 <script>
 function myFunction() {
-  location.replace("http://localhost:8080/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/index.html")
+  location.replace("http://localhost:8080/Practica-de-laboratorio-02--Servlets--JSP-y-JPA/index.html")
 }
 </script>
 
