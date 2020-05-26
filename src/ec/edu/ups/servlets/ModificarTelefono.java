@@ -74,6 +74,7 @@ public class ModificarTelefono extends HttpServlet {
         String url = "/Sesion?usr=" + user.getCorreo() + "&pass=" + user.getPassword();
 		System.out.println("URL" + url);
 		//getServletContext().getRequestDispatcher(url).forward(request, response);
+		request.getRequestDispatcher(url).forward(request, response);
 		//doGet(request, response);
 	}
 
