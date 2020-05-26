@@ -3,6 +3,7 @@ package ec.edu.ups.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,7 +46,7 @@ public class BuscarTelefono extends HttpServlet {
 	
 		Usuario user = DAOFactory.getDAOFactory().getUserDAO().read(String.valueOf(request.getSession().getAttribute("userID")));
 
-		Telefono telefono = telefonoDAO.read(numTelf);	
+		Telefono telefono = telefonoDAO.findbyTelefonoNumber(numTelf);	
 		
 		System.out.println("Telefono busca " + telefono);
 		String url = null;
@@ -53,6 +54,11 @@ public class BuscarTelefono extends HttpServlet {
 			request.setAttribute("telefono", telefono); // Estara disponible como ${telefono} en JSP
 			System.out.println("numero del telefono: "+ telefono.getNumero()+" tipo: "+ telefono.getTipo() + "Operadore" + telefono.getOperadora());
 			url = "/Sesion?usr=" + user.getCorreo() + "&pass=" + user.getPassword();
+			//getServletContext().getRequestDispatcher(url).forward(request, response);
+			RequestDispatcher rd;
+			rd = request.getRequestDispatcher(url);
+			rd.forward(request, response);
+			
 		}else {
 			String urlLoc = "/Sesion?usr=" + user.getCorreo() + "&pass=" + user.getPassword();
 			out.println("<script type=\"text/javascript\">");
@@ -61,7 +67,7 @@ public class BuscarTelefono extends HttpServlet {
 			out.println("</script>");
 		}		
 		System.out.println("URL" + url);
-		getServletContext().getRequestDispatcher(url).forward(request, response);
+		
 	}
 
 	/**
