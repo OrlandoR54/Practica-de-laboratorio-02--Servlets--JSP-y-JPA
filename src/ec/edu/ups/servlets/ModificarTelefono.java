@@ -49,12 +49,18 @@ public class ModificarTelefono extends HttpServlet {
         String operadora = request.getParameter("operadora");
         String idTelefono = request.getParameter("tel_id");
         
-        TelefonoDAO telefonoDAO = DAOFactory.getDAOFactory().getTelefonoDAO();
-        Telefono telefono = telefonoDAO.findbyTelefonoId(Integer.parseInt(idTelefono));
-       
+        
         System.err.println("Numero tel: " + numero);
         System.err.println("tipo tel: " + tipo);
         System.err.println("Operadora tel: " + operadora);
+        System.out.println("Tel ID: " + idTelefono);
+        
+        TelefonoDAO telefonoDAO = DAOFactory.getDAOFactory().getTelefonoDAO();
+        System.out.println(telefonoDAO);
+        Telefono telefono = telefonoDAO.findbyTelefonoId(Integer.parseInt(idTelefono));
+        		
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!NUMERO DE TELEFONO " + telefono);
+       
         
         
         Usuario user = DAOFactory.getDAOFactory().getUserDAO().read(String.valueOf(request.getSession().getAttribute("userID")));
@@ -67,7 +73,7 @@ public class ModificarTelefono extends HttpServlet {
         telefonoDAO.update(telefono);
         String url = "/Sesion?usr=" + user.getCorreo() + "&pass=" + user.getPassword();
 		System.out.println("URL" + url);
-		getServletContext().getRequestDispatcher(url).forward(request, response);
+		//getServletContext().getRequestDispatcher(url).forward(request, response);
 		//doGet(request, response);
 	}
 
