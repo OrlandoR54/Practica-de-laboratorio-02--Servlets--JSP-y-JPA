@@ -56,16 +56,16 @@ public class RegistrarUser extends HttpServlet {
 		
 		
 			if (usuarioDAO.create(user) == true) {
-	            response.sendRedirect("Sesio");
-	            //response.sendRedirect("Public/HTML/inicioSesion.html"); 
+	            //response.sendRedirect("Sesio");
+	            
 	            System.out.println("Usuario Creado");
 	            System.out.println("nombres: "+ nombres +" apellidos: " + apellidos + " cedula: " + cedula + " email: " + email + " password: " + password);
 	            /*out.println("<script type='text/javascript'>");
 	        	out.println("alert('Usuario creado');");
 	        	out.println("location='/Practica-de-laboratorio-01-Servlets-JSP-y-JDBC/Public/HTML/inicioSesion.html';");
 	        	out.println("</script>");*/
-	            //request.getRequestDispatcher("inicioSesion.html").forward(request, response);  
-	            
+	            //request.getRequestDispatcher("Public/HTML/inicioSesion.html").forward(request, response);  
+	            response.sendRedirect("Public/HTML/inicioSesion.html"); 
 	            
 	           
 				//getServletContext().getRequestDispatcher("/Public/HTML/incioSesion.html").forward(request, response);
@@ -79,7 +79,7 @@ public class RegistrarUser extends HttpServlet {
 	        	out.println("<meta http-equiv='refresh' content='3;URL=index.html'>");//redirije despues de 3 segundos
 	        	out.println("<p style='color:red;'>User or password incorrect!</p>");
 	        	*/
-	           // response.sendRedirect("inicioSesion.html");
+	            response.sendRedirect("inicioSesion.html");
 	        }
 		
 	}
