@@ -142,7 +142,10 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID>{
 	@Override
 	public Telefono findbyTelefonoId(int tel_codigo) {
 		// TODO Auto-generated method stub
-		return null;
+		Query nativeQuery = em.createNativeQuery("SELECT * FROM Telefono where id = ? ", Telefono.class);
+		nativeQuery.setParameter(1, tel_codigo);
+
+		return  (Telefono) nativeQuery.getSingleResult();
 	}
 
 
