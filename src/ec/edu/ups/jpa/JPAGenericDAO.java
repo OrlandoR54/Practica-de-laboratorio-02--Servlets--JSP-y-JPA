@@ -54,6 +54,7 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID>{
 	@Override
 	public T read(ID id) {
 		// TODO Auto-generated method stub
+		System.out.println("Prueba de SQL" + em.find(persistentClass, id));
 		return em.find(persistentClass, id);
 	}
 
@@ -117,7 +118,12 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID>{
 	@Override
 	public List<Usuario> findByIdOrMail(String context) {
 		// TODO Auto-generated method stub
-		return null;
+		Query nativeQuery = em.createNativeQuery(
+				"SELECT * FROM usuario WHERE usuario.CEDULA = ? OR usuario.CORREO = ?", Usuario.class);
+		nativeQuery.setParameter(1, context);
+		nativeQuery.setParameter(2, context);
+
+		return (List<Usuario>) nativeQuery.getResultList();
 	}
 
 
@@ -148,6 +154,13 @@ public class JPAGenericDAO<T, ID> implements GenericDAO<T, ID>{
 		return  (Telefono) nativeQuery.getSingleResult();
 	}
 
+	@Override
+	public Telefono findbyTelefonoNumber(String tel_number) {
+		// TODO Auto-generated method stub
+		Query nativeQuery = em.createNativeQuery("SELECT * FROM Telefono WHERE numero = ? ", Telefono.class);
+		nativeQuery.setParameter(1, tel_number);
 
+		return  (Telefono) nativeQuery.getSingleResult();
+	}
 
 }
