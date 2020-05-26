@@ -43,4 +43,6 @@ public interface GenericDAO<T, ID> {
 	public Set<Telefono> findByUserId(String cedula);
 	
 	public Telefono findbyTelefonoId(int tel_codigo);
+	
+	public Telefono findbyTelefonoNumber(String tel_number);
 }
