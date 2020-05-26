@@ -54,8 +54,6 @@ public class RegistrarUser extends HttpServlet {
 		
 		Usuario user = new Usuario(cedula, nombres, apellidos, email, password);
 		
-		String page = "";
-		
 		
 			if (usuarioDAO.create(user) == true) {
 	            response.sendRedirect("Sesio");
