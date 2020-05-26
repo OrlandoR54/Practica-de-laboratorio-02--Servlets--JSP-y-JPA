@@ -73,8 +73,8 @@ public class ModificarTelefono extends HttpServlet {
         telefonoDAO.update(telefono);
         String url = "/Sesion?usr=" + user.getCorreo() + "&pass=" + user.getPassword();
 		System.out.println("URL" + url);
-		//getServletContext().getRequestDispatcher(url).forward(request, response);
-		request.getRequestDispatcher(url).forward(request, response);
+		getServletContext().getRequestDispatcher(url).forward(request, response);
+		//response.sendRedirect("localhost:8080/Practica-de-laboratorio-02--Servlets--JSP-y-JPA" + url);
 		//doGet(request, response);
 	}
 
