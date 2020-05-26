@@ -23,4 +23,28 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, String> implements Usu
 		// TODO Auto-generated constructor stub
 		super(Usuario.class);
 	}
+
+/*	
+	@Override
+	public Usuario findUser(String correo, String pass) {
+		// TODO Auto-generated method stub
+		Query nativeQuery = em.createNativeQuery("SELECT * FROM Usuario where correo =? AND pwd=?", Usuario.class);
+		((javax.persistence.Query) nativeQuery).setParameter(1, correo);
+		((javax.persistence.Query) nativeQuery).setParameter(2, pass);
+		
+		return (Usuario) ((javax.persistence.Query) nativeQuery).getSingleResult();
+	}
+
+	@Override
+	public List<Usuario> findByIdOrMail(String context) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario findByCorreo(String correo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	*/
 }
