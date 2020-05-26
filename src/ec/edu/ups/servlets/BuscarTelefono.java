@@ -47,6 +47,7 @@ public class BuscarTelefono extends HttpServlet {
 
 		Telefono telefono = telefonoDAO.read(numTelf);	
 		
+		System.out.println("Telefono busca " + telefono);
 		String url = null;
 		if (telefono != null) {
 			request.setAttribute("telefono", telefono); // Estara disponible como ${telefono} en JSP
