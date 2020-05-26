@@ -188,7 +188,7 @@
 							          <span aria-hidden="true">&times;</span>
 							        </button>
 							      </div>
-							     	<form action="ModificarTelefono" method="post">
+							     	<form action="ModificarTelefono" method="get">
 		   						      <input type="hidden" value="${telefono.id}" id="tel_id" readonly name="tel_id">
 								      <div class="modal-body">
 								      	<div class="form-group">
