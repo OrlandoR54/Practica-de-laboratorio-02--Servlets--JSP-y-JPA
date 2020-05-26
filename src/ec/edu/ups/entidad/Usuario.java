@@ -24,7 +24,6 @@ public class Usuario implements Serializable {
 	@Column(unique = true, nullable = false)
 	private String correo;
 	private String password;
-	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
 	private Set<Telefono> telefonos;
 
