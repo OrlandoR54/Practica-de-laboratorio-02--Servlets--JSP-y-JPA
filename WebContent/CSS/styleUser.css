@@ -1,0 +1,193 @@
+body {
+	background: #F0F4EF;
+}
+
+.navbar .icon-brand{
+   font-size: 25px; /*Tamanio del icono*/
+ 
+}
+
+
+.content-tittle{
+	width: 900px;
+	margin: 30px 230px;
+	margin-top: 60px;
+}
+
+.content-tittle h1{
+	width: 100%;
+}
+
+.container{
+	width: 90%;
+	margin: auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background: #F49336;
+}
+
+.opc{
+	display: flex;
+}
+
+
+.content-btn{
+	width: 100%;
+	text-align:center;
+	height: 50px;
+}
+
+.btn-telf{
+	height:50px; 
+    width:190px; 
+    margin: -20px -50px; 
+    
+    top:50%; 
+    left:50%;	
+    border-radius: 10px;
+}
+
+.btn-bus-telf {
+	height:50px; 
+    width:190px; 
+    margin-left: 10px;
+    
+    top:50%; 
+    left:50%;	
+    border-radius: 10px;
+}
+
+.form-bus{
+	margin-bottom: 10px;
+}
+
+.content-num{
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+.container-bus{
+	width: 95%;
+	margin: auto;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background: #F49336;	
+}
+
+label.lbl-num{
+	padding-top: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/*-----------------------INPUTS------------------------*/
+.container-3{
+  width: 900px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+ 
+.container-3 input#phone{
+  width: 800px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.container-3 input#phone::-webkit-input-placeholder {
+   color: #65737e;
+}
+ 
+.container-3 input#phone:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+ 
+.container-3 input#phone::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+ 
+.container-3 input#phone:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+.container-3 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 11px;
+  margin-top: 11px;
+  z-index: 1;
+  color: #4f5b66;
+  font-size: 20px; /*Tamanio del icono*/
+ 
+   -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.container-3 input#phone:focus, .container-3 input#phone:active{
+    outline:none; 
+}
+ 
+.container-3:hover .icon{
+  margin-top: 16px;
+  color: #93a2ad;
+ 
+  -webkit-transform:scale(1.5); /* Safari and Chrome */
+  -moz-transform:scale(1.5); /* Firefox */
+  -ms-transform:scale(1.5); /* IE 9 */
+  -o-transform:scale(1.5); /* Opera */
+   transform:scale(1.5);
+  }
+  
+  
+ /*<---------------------------------SELECT--------------------------------->*/
+  select {
+  margin: 50px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  border-radius: 10px;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../IMG/chevron-down-solid.svg) 96% / 15% no-repeat #EEE;  /* Add custom arrow */
+}
+
+.boxOpr:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+/*----------------------------------------------------------------------------*/
+/*<---------------------------------TABLA--------------------------------->*/
+.tel_dato::placeholder {
+ color: black; 
+ font-weight: bold;
+}
+
+.tel_dato {
+	border: none;
+	background-color: #5500E2;
+}
+
+input.form-control.form-control-sm {
+	visibility: hidden;
+}
+/*
+td.td_hide{
+	visibility: hidden;
+}*/
