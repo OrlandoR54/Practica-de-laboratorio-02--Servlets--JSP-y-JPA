@@ -34,11 +34,11 @@ public interface GenericDAO<T, ID> {
 
 	public List<T> find();
 	
-	public Usuario findUser(String correo, String pass);
+	Usuario findUser(String correo, String pass);
 	
 	public List<Usuario> findByIdOrMail(String context);
 	
-	public Usuario findByCorreo(String correo);
+	public List<Telefono> findByCorreo(String correo);
 	
 	public Set<Telefono> findByUserId(String cedula);
 	
